@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Joyería Pallarols — Editorial silencioso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f1ec;         /* blanco hueso */
+    --paper:#ece7dd;      /* un tono más cálido */
+    --ink:#1a1512;        /* tinta */
+    --ink-soft:#4a4139;
+    --mute:#8a7a66;       /* latón apagado */
+    --line:#d9d0c2;
+    --silver:#b8b3aa;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  body{font-family:"Cormorant Garamond",'Times New Roman',serif;font-size:18px;line-height:1.5;}
+  .sans{font-family:"Inter","Helvetica Neue",sans-serif;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;}
+
+  /* ───────────── NAV ───────────── */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:22px 40px;
+    background:linear-gradient(to bottom, rgba(244,241,236,.92), rgba(244,241,236,0));
+    backdrop-filter:blur(8px);
+  }
+  nav .left, nav .right{display:flex;gap:28px;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
+  nav .right{justify-content:flex-end;}
+  nav .brand{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:22px;letter-spacing:0.01em;text-align:center;white-space:nowrap;}
+  nav a{text-decoration:none;opacity:.8;}
+  nav a:hover{opacity:1;color:var(--ink);}
+
+  /* ───────────── HERO ───────────── */
+  .hero{
+    min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:120px 40px 48px;
+    position:relative;
+  }
+  .hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center;max-width:1440px;margin:0 auto;width:100%;}
+  .hero h1{
+    font-weight:300;font-size:clamp(72px, 9vw, 148px);line-height:0.92;letter-spacing:-0.02em;margin:0;
+  }
+  .hero h1 em{font-weight:400;}
+  .hero .kicker{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:var(--mute);margin-bottom:36px;}
+  .hero .lede{max-width:380px;margin-top:48px;font-size:20px;line-height:1.5;color:var(--ink-soft);font-style:italic;}
+  .hero-img{aspect-ratio:4/5;background:var(--paper);position:relative;overflow:hidden;}
+  .hero-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.02);}
+  .hero-meta{display:flex;justify-content:space-between;align-items:end;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mute);max-width:1440px;margin:0 auto;width:100%;padding-top:40px;border-top:1px solid var(--line);}
+  .hero-meta span em{font-style:normal;color:var(--ink);}
+
+  /* ───────────── MANIFIESTO ───────────── */
+  .manifesto{padding:200px 40px;max-width:1100px;margin:0 auto;text-align:center;}
+  .manifesto .eyebrow{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:var(--mute);margin-bottom:40px;}
+  .manifesto p{font-size:clamp(34px,4vw,56px);line-height:1.18;font-weight:300;letter-spacing:-0.01em;margin:0;}
+  .manifesto p em{font-style:italic;color:var(--mute);}
+  .manifesto .sig{margin-top:72px;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--mute);}
+
+  /* ───────────── LINAJE ───────────── */
+  .linaje{background:var(--paper);padding:140px 40px;}
+  .linaje-inner{max-width:1440px;margin:0 auto;}
+  .section-head{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:end;margin-bottom:96px;padding-bottom:32px;border-bottom:1px solid var(--line);}
+  .section-head .num{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--mute);}
+  .section-head h2{font-weight:300;font-size:clamp(48px,5.5vw,88px);line-height:0.98;letter-spacing:-0.015em;margin:16px 0 0;}
+  .section-head h2 em{font-style:italic;}
+  .section-head .sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;line-height:1.5;color:var(--ink-soft);max-width:480px;}
+
+  .generations{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;}
+  .gen{border-top:1px solid var(--ink);padding-top:24px;}
+  .gen .year{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.25em;color:var(--mute);}
+  .gen h3{font-weight:400;font-size:32px;line-height:1.1;margin:12px 0 18px;font-style:italic;}
+  .gen p{font-size:16px;line-height:1.55;color:var(--ink-soft);margin:0;}
+
+  /* ───────────── TALLER ───────────── */
+  .taller{padding:140px 0;}
+  .taller-inner{max-width:1440px;margin:0 auto;padding:0 40px;}
+  .taller-grid{display:grid;grid-template-columns:5fr 4fr;gap:64px;margin-top:96px;align-items:start;}
+  .taller-grid .img{aspect-ratio:4/5;background:var(--paper);overflow:hidden;}
+  .taller-grid .img img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);}
+  .taller-steps{display:grid;gap:56px;padding-top:40px;}
+  .step{display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:start;}
+  .step .n{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--mute);padding-top:8px;}
+  .step h4{font-weight:400;font-size:28px;margin:0 0 10px;font-style:italic;}
+  .step p{font-size:16px;line-height:1.6;color:var(--ink-soft);margin:0;}
+
+  .quote{max-width:900px;margin:160px auto 0;padding:0 40px;text-align:center;}
+  .quote p{font-size:clamp(28px,3.4vw,44px);line-height:1.25;font-weight:300;font-style:italic;margin:0;}
+  .quote .by{margin-top:40px;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mute);}
+
+  /* ───────────── CATÁLOGO ───────────── */
+  .catalogo{padding:180px 40px 140px;}
+  .catalogo-inner{max-width:1440px;margin:0 auto;}
+  .coll-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:72px;}
+  .coll{position:relative;cursor:pointer;}
+  .coll .img{aspect-ratio:3/4;background:var(--paper);overflow:hidden;margin-bottom:24px;}
+  .coll .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.8s ease;filter:saturate(.82);}
+  .coll:hover .img img{transform:scale(1.04);}
+  .coll .meta{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:16px;}
+  .coll .meta h3{font-weight:400;font-size:26px;margin:0;font-style:italic;}
+  .coll .meta .price{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.2em;color:var(--mute);text-transform:uppercase;}
+  .coll .desc{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:0.1em;color:var(--mute);text-transform:uppercase;margin-top:8px;}
+
+  .all-link{display:inline-flex;align-items:center;gap:14px;margin-top:80px;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:6px;}
+
+  /* ───────────── ENCARGOS ───────────── */
+  .encargos{background:var(--ink);color:var(--bg);padding:160px 40px;}
+  .encargos-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .encargos .eyebrow{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.35em;text-transform:uppercase;color:var(--silver);margin-bottom:32px;}
+  .encargos h2{font-weight:300;font-size:clamp(44px,5vw,76px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 32px;}
+  .encargos h2 em{font-style:italic;color:#d9c9a8;}
+  .encargos p{font-size:18px;line-height:1.6;color:#c8c0b3;max-width:420px;}
+  .encargos .steps{display:grid;gap:32px;border-left:1px solid rgba(255,255,255,.18);padding-left:40px;}
+  .enc-step .n{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;color:var(--silver);}
+  .enc-step h4{font-weight:400;font-size:24px;font-style:italic;margin:8px 0;}
+  .enc-step p{font-size:15px;color:#a8a195;margin:0;}
+  .cta{display:inline-flex;align-items:center;gap:16px;margin-top:48px;padding:18px 32px;border:1px solid rgba(255,255,255,.4);color:var(--bg);text-decoration:none;font-family:"Inter",sans-serif;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;transition:all .3s;}
+  .cta:hover{background:var(--bg);color:var(--ink);border-color:var(--bg);}
+
+  /* ───────────── FOOTER ───────────── */
+  footer{padding:100px 40px 60px;border-top:1px solid var(--line);}
+  .foot-inner{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;}
+  .foot-inner .brand{font-size:44px;font-style:italic;font-weight:400;line-height:1;}
+  .foot-inner .brand div{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mute);margin-top:18px;font-style:normal;font-weight:500;}
+  .col h5{font-family:"Inter",sans-serif;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--mute);margin:0 0 20px;font-weight:500;}
+  .col a, .col p{display:block;font-family:"Inter",sans-serif;font-size:13px;color:var(--ink-soft);line-height:1.9;text-decoration:none;margin:0;}
+  .col a:hover{color:var(--ink);}
+  .legal{max-width:1440px;margin:80px auto 0;display:flex;justify-content:space-between;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mute);}
+
+  /* ───────────── SMALL ───────────── */
+  .back{position:fixed;left:20px;bottom:20px;z-index:80;font-family:"Inter",sans-serif;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--ink-soft);background:rgba(244,241,236,.85);backdrop-filter:blur(6px);padding:10px 14px;border:1px solid var(--line);text-decoration:none;}
+
+  @media (max-width: 900px){
+    .hero-inner,.section-head,.taller-grid,.encargos-inner,.foot-inner{grid-template-columns:1fr;gap:48px;}
+    .generations,.coll-grid{grid-template-columns:1fr 1fr;}
+    nav{padding:16px 20px;grid-template-columns:1fr auto;}
+    nav .right{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← Variantes</a>
+
+<nav>
+  <div class="left">
+    <a href="#linaje">Casa</a>
+    <a href="#taller">Taller</a>
+    <a href="#catalogo">Piezas</a>
+  </div>
+  <div class="brand">Joyería <em>Pallarols</em></div>
+  <div class="right">
+    <a href="#encargos">Encargos</a>
+    <a href="#">Visita</a>
+    <a href="#">Es / En</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">Desde 1750 · Plata 925 · Buenos Aires</div>
+      <h1>El oficio<br/>es una forma<br/><em>de silencio.</em></h1>
+      <p class="lede">Piezas trabajadas a mano, una a una, con las herramientas que heredamos y la paciencia que nos enseñaron.</p>
+    </div>
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1200&q=80" alt="Anillo de plata trabajado a mano" onerror="this.style.display='none'"/>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <span>N.° <em>01</em></span>
+    <span>Editorial <em>Otoño 2026</em></span>
+    <span>Scroll <em>↓</em></span>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifesto">
+  <div class="eyebrow">Manifiesto</div>
+  <p>Nueve generaciones <em>golpeando</em> el mismo metal. Cada pieza lleva<br/>el tiempo que pide — ni un minuto <em>más</em>, ni un minuto <em>menos</em>.</p>
+  <div class="sig">— La casa</div>
+</section>
+
+<!-- LINAJE -->
+<section class="linaje" id="linaje">
+  <div class="linaje-inner">
+    <div class="section-head">
+      <div>
+        <div class="num">01 — Historia</div>
+      </div>
+      <div>
+        <h2>Un linaje <em>de manos</em>, no de firmas.</h2>
+        <p class="sub" style="margin-top:32px;">La casa pasa de padre a hijo desde mediados del siglo XVIII. Los apellidos cambian, el oficio no.</p>
+      </div>
+    </div>
+
+    <div class="generations">
+      <div class="gen">
+        <div class="year">GEN. I · 1750</div>
+        <h3>El orfebre catalán</h3>
+        <p>Llega a Buenos Aires con un juego de cinceles y una libreta de plantillas. Trabaja bandejas y cálices para la iglesia.</p>
+      </div>
+      <div class="gen">
+        <div class="year">GEN. IV · 1880</div>
+        <h3>La rastra criolla</h3>
+        <p>La casa se hace un nombre entre hacendados: rastras, facones, mates. Nace la firma discreta en el reverso.</p>
+      </div>
+      <div class="gen">
+        <div class="year">GEN. VII · 1952</div>
+        <h3>Alianzas a medida</h3>
+        <p>Se abre la línea nupcial. Un par de alianzas al día, martilladas sobre el mismo yunque desde hace un siglo.</p>
+      </div>
+      <div class="gen">
+        <div class="year">GEN. IX · hoy</div>
+        <h3>Taller abierto</h3>
+        <p>Recibimos con cita. Las piezas se hacen a la vista, al lado de quien las va a llevar. Nada ha cambiado, y todo ha cambiado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TALLER -->
+<section class="taller" id="taller">
+  <div class="taller-inner">
+    <div class="section-head">
+      <div><div class="num">02 — Taller</div></div>
+      <div>
+        <h2>Cuatro gestos <em>heredados.</em></h2>
+        <p class="sub" style="margin-top:32px;">Fundir, forjar, cincelar, pulir. El proceso no ha cambiado en trescientos años porque nada mejor lo reemplazó.</p>
+      </div>
+    </div>
+
+    <div class="taller-grid">
+      <div class="img">
+        <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80" alt="Manos del orfebre trabajando plata" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/>
+      </div>
+      <div class="taller-steps">
+        <div class="step">
+          <div class="n">I</div>
+          <div>
+            <h4>Fundir</h4>
+            <p>Plata 925 en granalla, fundida al soplete sobre ladrillo refractario. El metal se vuelve líquido y vuelve a su estado dócil.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">II</div>
+          <div>
+            <h4>Forjar</h4>
+            <p>Sobre el yunque, el lingote se estira, se dobla, se recoge. Cada golpe endurece la fibra del metal.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">III</div>
+          <div>
+            <h4>Cincelar</h4>
+            <p>Los cinceles tienen nombre propio y un siglo encima. Trabajan el dibujo desde el reverso — repujado — o desde el frente.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">IV</div>
+          <div>
+            <h4>Pulir</h4>
+            <p>Lija fina, pasta, gamuza. La pátina aparece sola con los años; no la forzamos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>“La plata no miente. Lo que hiciste mal a las nueve de la mañana, <em>a las cinco se nota.</em>”</p>
+    <div class="by">— Apunte de taller, sin fecha</div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalogo" id="catalogo">
+  <div class="catalogo-inner">
+    <div class="section-head">
+      <div><div class="num">03 — Piezas</div></div>
+      <div>
+        <h2>Colecciones <em>permanentes.</em></h2>
+        <p class="sub" style="margin-top:32px;">Todo en plata 925. Números limitados. Cada pieza lleva la firma discreta de la casa y el año de hechura.</p>
+      </div>
+    </div>
+
+    <div class="coll-grid">
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=900&q=80" alt="Anillo Sello" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Sello</h3>
+          <span class="price">Desde $ 420.000</span>
+        </div>
+        <div class="desc">Anillos · 6 modelos</div>
+      </div>
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=900&q=80" alt="Alianzas" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Alianzas</h3>
+          <span class="price">Desde $ 280.000</span>
+        </div>
+        <div class="desc">A medida · Grabado incluido</div>
+      </div>
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=900&q=80" alt="Colgante Retoño" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Retoño</h3>
+          <span class="price">Desde $ 190.000</span>
+        </div>
+        <div class="desc">Colgantes · Serie corta</div>
+      </div>
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=900&q=80" alt="Aros Gota" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Gota</h3>
+          <span class="price">Desde $ 160.000</span>
+        </div>
+        <div class="desc">Aros · 4 largos</div>
+      </div>
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1535632066274-3f7f26feb089?w=900&q=80" alt="Pulsera Cordón" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Cordón</h3>
+          <span class="price">Desde $ 240.000</span>
+        </div>
+        <div class="desc">Pulseras · Trenzada a mano</div>
+      </div>
+      <div class="coll">
+        <div class="img"><img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=900&q=80" alt="Cadena Patria" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#ece7dd,#ece7dd 10px,#e3dcd0 10px,#e3dcd0 20px)'"/></div>
+        <div class="meta">
+          <h3>Patria</h3>
+          <span class="price">Desde $ 320.000</span>
+        </div>
+        <div class="desc">Cadenas · Eslabón labrado</div>
+      </div>
+    </div>
+
+    <a class="all-link" href="#">Ver todas las piezas &nbsp;→</a>
+  </div>
+</section>
+
+<!-- ENCARGOS -->
+<section class="encargos" id="encargos">
+  <div class="encargos-inner">
+    <div>
+      <div class="eyebrow">04 — Encargos</div>
+      <h2>Una pieza que <em>no existe todavía.</em></h2>
+      <p>Anillos con piedras heredadas, alianzas grabadas con letra de puño, colgantes que guardan una inicial, un escudo, una fecha. Trabajamos con cita, sin apuro.</p>
+      <a class="cta" href="#">Pedir un encuentro &nbsp;→</a>
+    </div>
+    <div class="steps">
+      <div class="enc-step">
+        <div class="n">I · CONVERSACIÓN</div>
+        <h4>Qué querés contar</h4>
+        <p>Un café en el taller. Traé lo que tengas: una foto, una piedra vieja, un boceto en servilleta.</p>
+      </div>
+      <div class="enc-step">
+        <div class="n">II · BOCETO</div>
+        <h4>Dibujo a mano</h4>
+        <p>Dos o tres propuestas en papel, con medidas reales y peso aproximado. Sin compromiso.</p>
+      </div>
+      <div class="enc-step">
+        <div class="n">III · HECHURA</div>
+        <h4>Seis a diez semanas</h4>
+        <p>Podés venir a ver la pieza en proceso cuantas veces quieras. Es parte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="brand">Joyería <em>Pallarols</em><div>Desde 1750 · Buenos Aires</div></div>
+    <div class="col">
+      <h5>Casa</h5>
+      <a href="#">Historia</a>
+      <a href="#">Taller</a>
+      <a href="#">Prensa</a>
+    </div>
+    <div class="col">
+      <h5>Piezas</h5>
+      <a href="#">Anillos</a>
+      <a href="#">Alianzas</a>
+      <a href="#">Colgantes</a>
+      <a href="#">Aros</a>
+    </div>
+    <div class="col">
+      <h5>Contacto</h5>
+      <p>Defensa 1039, San Telmo</p>
+      <p>Lunes a sábado, con cita</p>
+      <p>+54 11 4361 · ·</p>
+    </div>
+  </div>
+  <div class="legal">
+    <span>© 2026 · Diseño de demostración</span>
+    <span>Plata 925 · Hecho a mano en Argentina</span>
+  </div>
+</footer>
+
+<script>
+// Subtle reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  for(const e of entries){
+    if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='none'; }
+  }
+},{threshold:0.12});
+document.querySelectorAll('.manifesto p, .gen, .step, .coll, .enc-step, .quote p').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(24px)';
+  el.style.transition='opacity 1.2s ease, transform 1.2s ease';
+  io.observe(el);
+});
+</script>
+</body>
+</html>

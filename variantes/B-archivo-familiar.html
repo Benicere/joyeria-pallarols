@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Joyería Pallarols — Archivo familiar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Caveat:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ece4d4;
+    --paper-2:#e3d9c4;
+    --paper-dark:#d6c8ac;
+    --ink:#2b211a;
+    --ink-soft:#4f3f32;
+    --umber:#7a4d2e;
+    --gold:#a6864a;
+    --stain:#b89566;
+    --line:#b9a98a;
+    color-scheme: light;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;}
+  body{font-family:"EB Garamond",'Times New Roman',serif;font-size:18px;line-height:1.55;}
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;}
+  .hand{font-family:"Caveat",cursive;}
+
+  /* paper texture */
+  body::before{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:100;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(184,149,102,0.18), transparent 55%),
+      radial-gradient(ellipse at 80% 80%, rgba(122,77,46,0.12), transparent 60%),
+      radial-gradient(circle at 50% 40%, transparent 0%, rgba(43,33,26,0.08) 100%);
+    mix-blend-mode:multiply;
+  }
+  body::after{
+    content:'';position:fixed;inset:0;pointer-events:none;z-index:101;opacity:.35;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.17 0 0 0 0 0.13 0 0 0 0 0.10 0 0 0 0.35 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode:multiply;
+  }
+
+  img{display:block;max-width:100%;filter:sepia(0.18) saturate(.82) contrast(0.98);}
+  a{color:inherit;}
+
+  /* ──────────────── TOP BAR ──────────────── */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+    padding:14px 32px;
+  }
+  .topbar .left,.topbar .right{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.06em;color:var(--ink-soft);display:flex;gap:24px;align-items:center;}
+  .topbar .right{justify-content:flex-end;}
+  .topbar .mark{display:flex;align-items:center;gap:14px;}
+  .topbar .seal{width:36px;height:36px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-style:italic;font-size:18px;}
+  .topbar .name{font-family:"EB Garamond",serif;font-size:20px;font-style:italic;letter-spacing:0.01em;white-space:nowrap;}
+  .topbar .right a{text-decoration:none;border-bottom:1px dotted transparent;padding-bottom:2px;}
+  .topbar .right a:hover{border-color:var(--ink-soft);}
+  .topbar .left strong{color:var(--ink);font-weight:500;}
+
+  /* ──────────────── HERO ──────────────── */
+  .hero{padding:40px 32px 80px;max-width:1360px;margin:0 auto;position:relative;}
+  .hero-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:8px;}
+  .hero-head .l,.hero-head .r{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--ink-soft);}
+  .hero-head .r{text-align:right;}
+  .hero-head h4{font-family:"EB Garamond",serif;font-style:italic;font-weight:400;margin:0;font-size:16px;}
+  .hero-head-sub{border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:60px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.25em;color:var(--ink-soft);text-transform:uppercase;}
+
+  .hero-title{
+    font-weight:400;font-size:clamp(88px,14vw,220px);line-height:0.82;letter-spacing:-0.025em;
+    text-align:center;margin:0;
+  }
+  .hero-title em{font-style:italic;font-weight:500;}
+  .hero-title .amp{font-style:italic;font-weight:400;color:var(--umber);}
+  .hero-sub{
+    text-align:center;margin:32px auto 0;max-width:620px;font-style:italic;font-size:22px;line-height:1.45;color:var(--ink-soft);
+  }
+
+  .hero-plate{
+    margin:80px auto 0;max-width:1080px;
+    display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:40px;align-items:end;
+  }
+  .plate-col .img{aspect-ratio:3/4;background:var(--paper-2);border:1px solid var(--line);overflow:hidden;}
+  .plate-col.center .img{aspect-ratio:4/5;}
+  .plate-col .img img{width:100%;height:100%;object-fit:cover;}
+  .plate-col .caption{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.12em;color:var(--ink-soft);margin-top:10px;display:flex;justify-content:space-between;text-transform:uppercase;}
+  .plate-col .caption em{font-style:italic;font-family:"EB Garamond",serif;text-transform:none;letter-spacing:0;font-size:12px;color:var(--ink);}
+
+  .note-stamp{
+    position:absolute;top:120px;right:40px;transform:rotate(4deg);
+    font-family:"Caveat",cursive;font-size:32px;color:var(--umber);line-height:1.15;max-width:220px;
+  }
+  .note-stamp::before{content:'';display:block;width:60px;height:1px;background:var(--umber);margin-bottom:8px;}
+
+  /* ──────────────── MANIFIESTO / EPÍGRAFE ──────────────── */
+  .epigraph{padding:120px 32px;max-width:900px;margin:0 auto;text-align:center;border-bottom:1px solid var(--line);}
+  .epigraph .orn{font-size:22px;color:var(--umber);margin-bottom:40px;letter-spacing:0.6em;}
+  .epigraph p{font-size:clamp(26px,3.2vw,38px);line-height:1.35;font-style:italic;font-weight:400;margin:0;}
+  .epigraph p strong{font-weight:500;font-style:normal;}
+  .epigraph .sig{margin-top:48px;font-family:"Caveat",cursive;font-size:26px;color:var(--umber);}
+
+  /* ──────────────── LINAJE / ARBOL ──────────────── */
+  .linaje{padding:120px 32px 60px;max-width:1360px;margin:0 auto;}
+  .sec-head{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:18px;margin-bottom:80px;}
+  .sec-head .cap{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);}
+  .sec-head h2{font-weight:500;font-size:clamp(48px,6.5vw,96px);margin:0;line-height:0.95;letter-spacing:-0.02em;}
+  .sec-head h2 em{font-style:italic;color:var(--umber);}
+
+  .tree{display:grid;grid-template-columns:repeat(12, 1fr);gap:32px;margin-bottom:40px;}
+  .gen-entry{grid-column:span 4;border-top:3px solid var(--ink);padding-top:18px;position:relative;}
+  .gen-entry.wide{grid-column:span 6;}
+  .gen-entry.full{grid-column:span 12;border-top-style:double;border-top-width:4px;padding:24px 0 0;}
+  .gen-entry .when{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;color:var(--ink-soft);}
+  .gen-entry h3{font-weight:500;font-size:34px;margin:10px 0 16px;font-style:italic;letter-spacing:-0.01em;}
+  .gen-entry p{font-size:17px;line-height:1.6;color:var(--ink-soft);margin:0 0 14px;}
+  .gen-entry .who{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--umber);margin-top:18px;text-transform:uppercase;}
+  .gen-entry .margin{position:absolute;top:-12px;right:0;font-family:"Caveat",cursive;font-size:22px;color:var(--umber);transform:rotate(-3deg);}
+  .gen-entry .polaroid{width:100%;aspect-ratio:4/3;background:var(--paper-2);border:1px solid var(--line);margin-bottom:16px;overflow:hidden;}
+  .gen-entry .polaroid img{width:100%;height:100%;object-fit:cover;}
+
+  .tree-foot{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--ink-soft);text-transform:uppercase;}
+
+  /* ──────────────── TALLER ──────────────── */
+  .taller{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:120px 32px;}
+  .taller-inner{max-width:1360px;margin:0 auto;}
+  .taller-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .taller-grid .img{aspect-ratio:5/6;background:var(--paper-dark);border:1px solid var(--line);overflow:hidden;}
+  .taller-grid .img img{width:100%;height:100%;object-fit:cover;}
+  .recipe{padding-top:20px;}
+  .recipe h3{font-weight:500;font-style:italic;font-size:44px;margin:0 0 8px;letter-spacing:-0.01em;}
+  .recipe .rule{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:8px 0;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;display:flex;justify-content:space-between;margin:20px 0 32px;}
+  .recipe ol{list-style:none;padding:0;margin:0;counter-reset:n;}
+  .recipe li{counter-increment:n;display:grid;grid-template-columns:50px 1fr;gap:18px;padding:22px 0;border-bottom:1px dashed var(--line);}
+  .recipe li::before{content:counter(n, upper-roman)".";font-family:"EB Garamond",serif;font-size:22px;font-style:italic;color:var(--umber);}
+  .recipe li h4{margin:0 0 6px;font-weight:500;font-style:italic;font-size:22px;}
+  .recipe li p{margin:0;font-size:16px;color:var(--ink-soft);line-height:1.55;}
+  .recipe .tool{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--umber);margin-top:8px;border-top:1px dotted var(--umber);padding-top:6px;}
+
+  .note-card{
+    margin-top:80px;max-width:640px;padding:40px 48px;
+    background:#efe7d4;border:1px solid var(--line);
+    box-shadow:4px 6px 0 rgba(43,33,26,.08);
+    transform:rotate(-0.6deg);
+  }
+  .note-card .hand{font-size:28px;line-height:1.45;color:var(--ink);}
+  .note-card .by{margin-top:24px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;color:var(--ink-soft);text-transform:uppercase;}
+
+  /* ──────────────── CATÁLOGO ──────────────── */
+  .catalogo{padding:140px 32px;max-width:1360px;margin:0 auto;}
+  .ledger{width:100%;border-collapse:collapse;margin-top:40px;}
+  .ledger thead th{text-align:left;padding:16px 12px;border-bottom:2px solid var(--ink);font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-soft);font-weight:400;}
+  .ledger tbody tr{border-bottom:1px solid var(--line);transition:background .3s;}
+  .ledger tbody tr:hover{background:rgba(122,77,46,.05);}
+  .ledger td{padding:22px 12px;vertical-align:middle;}
+  .ledger td .thumb{width:88px;height:110px;background:var(--paper-2);border:1px solid var(--line);overflow:hidden;}
+  .ledger td .thumb img{width:100%;height:100%;object-fit:cover;}
+  .ledger td.name{font-style:italic;font-size:28px;font-weight:500;line-height:1.1;}
+  .ledger td.name small{display:block;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.18em;color:var(--ink-soft);font-style:normal;margin-top:6px;text-transform:uppercase;}
+  .ledger td.desc{font-size:15px;color:var(--ink-soft);max-width:320px;line-height:1.5;}
+  .ledger td.mono{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:0.08em;color:var(--ink);}
+  .ledger td.cta a{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--umber);text-decoration:none;border-bottom:1px solid var(--umber);padding-bottom:3px;}
+
+  /* ──────────────── ENCARGOS ──────────────── */
+  .encargos{background:var(--ink);color:var(--paper);padding:140px 32px;position:relative;overflow:hidden;}
+  .encargos::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%, rgba(166,134,74,.22), transparent 50%);pointer-events:none;}
+  .encargos-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+  .encargos .eye{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);border-top:1px solid var(--gold);padding-top:16px;margin-bottom:40px;display:inline-block;}
+  .encargos h2{font-weight:400;font-size:clamp(52px,7vw,112px);line-height:0.95;letter-spacing:-0.02em;margin:0 0 40px;max-width:14ch;}
+  .encargos h2 em{font-style:italic;color:var(--gold);}
+  .encargos .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:start;}
+  .encargos p{font-size:19px;line-height:1.6;color:#d9c9a8;max-width:42ch;font-style:italic;}
+  .order-form{background:rgba(236,228,212,.06);border:1px solid rgba(236,228,212,.18);padding:36px 32px;}
+  .order-form h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin:0 0 24px;font-weight:400;}
+  .field{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px dotted rgba(236,228,212,.25);font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.08em;color:#c4b59a;text-transform:uppercase;}
+  .field .v{font-family:"EB Garamond",serif;font-style:italic;text-transform:none;letter-spacing:0;font-size:17px;color:var(--paper);}
+  .cta-dark{display:inline-flex;align-items:center;gap:14px;margin-top:32px;padding:18px 28px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;}
+  .cta-dark:hover{background:var(--gold);color:var(--ink);}
+
+  /* ──────────────── FOOTER ──────────────── */
+  footer{padding:80px 32px 40px;border-top:2px solid var(--ink);}
+  .foot{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;}
+  .foot .brand{font-family:"EB Garamond",serif;font-size:56px;line-height:0.9;font-weight:500;font-style:italic;}
+  .foot .brand small{display:block;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.18em;color:var(--ink-soft);margin-top:16px;font-style:normal;text-transform:uppercase;}
+  .foot h5{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px;font-weight:400;border-bottom:1px solid var(--ink);padding-bottom:8px;}
+  .foot a,.foot p{display:block;color:var(--ink);text-decoration:none;font-size:16px;line-height:1.85;margin:0;}
+  .foot a{font-style:italic;}
+  .colophon{max-width:1360px;margin:60px auto 0;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-soft);}
+
+  /* back link */
+  .back{position:fixed;left:16px;bottom:16px;z-index:200;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);padding:10px 14px;text-decoration:none;}
+
+  @media (max-width: 900px){
+    .hero-plate,.taller-grid,.encargos .cols,.foot{grid-template-columns:1fr;gap:40px;}
+    .tree{grid-template-columns:1fr;}
+    .gen-entry,.gen-entry.wide,.gen-entry.full{grid-column:span 1;}
+    .sec-head{grid-template-columns:1fr;gap:8px;}
+    .ledger td .thumb{width:56px;height:70px;}
+    .ledger td.desc{display:none;}
+    .note-stamp{display:none;}
+    .topbar .left,.topbar .right{display:none;}
+    .topbar{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<a class="back" href="../index.html">← Variantes</a>
+
+<!-- TOP -->
+<header class="topbar">
+  <div class="left">
+    <span>Libro · <strong>Tomo IX</strong></span>
+    <span>Folio · <strong>001</strong></span>
+  </div>
+  <div class="mark">
+    <div class="seal">P</div>
+    <div class="name">Joyería Pallarols</div>
+  </div>
+  <div class="right">
+    <a href="#linaje">Casa</a>
+    <a href="#taller">Taller</a>
+    <a href="#catalogo">Registro</a>
+    <a href="#encargos">Encargos</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-head">
+    <div class="l">Buenos Aires · Argentina</div>
+    <h4>— Archivo de la casa —</h4>
+    <div class="r">MMXXVI · Otoño</div>
+  </div>
+  <div class="hero-head-sub">Orfebrería de plata · Novena generación · Fundada en MDCCL</div>
+
+  <h1 class="hero-title">Una casa<br/><em>escrita</em> <span class="amp">en</span> plata.</h1>
+  <p class="hero-sub">Nueve generaciones anotando lo mismo, con paciencia: el peso, la fecha, el nombre de quien se la lleva.</p>
+
+  <div class="note-stamp">
+    hecha a mano,<br/>una por una —<br/>así, desde 1750.
+  </div>
+
+  <div class="hero-plate">
+    <div class="plate-col">
+      <div class="img"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=700&q=80" alt="Anillo sello" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#e3d9c4,#e3d9c4 10px,#d6c8ac 10px,#d6c8ac 20px)'"/></div>
+      <div class="caption"><span>LÁM. I</span><em>Anillo sello</em><span>P.24 g</span></div>
+    </div>
+    <div class="plate-col center">
+      <div class="img"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=80" alt="Pieza ceremonial" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#e3d9c4,#e3d9c4 10px,#d6c8ac 10px,#d6c8ac 20px)'"/></div>
+      <div class="caption"><span>LÁM. II</span><em>Colgante retoño</em><span>P.12 g</span></div>
+    </div>
+    <div class="plate-col">
+      <div class="img"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=700&q=80" alt="Par de alianzas" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#e3d9c4,#e3d9c4 10px,#d6c8ac 10px,#d6c8ac 20px)'"/></div>
+      <div class="caption"><span>LÁM. III</span><em>Alianzas · par</em><span>P.09 g</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EPÍGRAFE -->
+<section class="epigraph">
+  <div class="orn">· · · ✦ · · ·</div>
+  <p>La plata <strong>aguanta</strong> lo que uno le hace, y <strong>cuenta</strong> lo que uno es.<br/>Por eso lleva el nombre de quien la trabajó,<br/><em>no el de quien la encarga.</em></p>
+  <div class="sig">— A.P., cuaderno del taller, 1913</div>
+</section>
+
+<!-- LINAJE -->
+<section class="linaje" id="linaje">
+  <div class="sec-head">
+    <div class="cap">I · Linaje</div>
+    <h2>Nueve generaciones <em>en el mismo banco.</em></h2>
+    <div class="cap">1750 — 2026</div>
+  </div>
+
+  <div class="tree">
+
+    <div class="gen-entry wide">
+      <div class="polaroid"><img src="https://images.unsplash.com/photo-1520962880247-cfaf541c8724?w=900&q=80" alt="Taller antiguo" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#e3d9c4,#e3d9c4 10px,#d6c8ac 10px,#d6c8ac 20px)'"/></div>
+      <div class="when">GEN. I · 1750 — 1798</div>
+      <h3>El orfebre catalán</h3>
+      <p>Llega a Buenos Aires con un juego de cinceles envuelto en cuero y una libreta de plantillas heredadas de su padre. Trabaja cálices y bandejas para la iglesia, y la primera rastra criolla por encargo.</p>
+      <span class="who">— Fundador · Plata para iglesia y campo</span>
+      <span class="margin">"los cinceles<br/>son de él"</span>
+    </div>
+
+    <div class="gen-entry wide">
+      <div class="polaroid"><img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=900&q=80" alt="Registro de taller" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#e3d9c4,#e3d9c4 10px,#d6c8ac 10px,#d6c8ac 20px)'"/></div>
+      <div class="when">GEN. IV · 1845 — 1898</div>
+      <h3>La casa se hace <em>nombre</em></h3>
+      <p>Los hacendados del norte cruzan el Paraná para encargar facones, rastras y mates. Se abre el taller de Defensa y se empieza a firmar con una marca de punzón al reverso: dos letras, una estrella.</p>
+      <span class="who">— Platería criolla · Apogeo</span>
+    </div>
+
+    <div class="gen-entry">
+      <div class="when">GEN. VI · 1915 — 1952</div>
+      <h3>El cuaderno</h3>
+      <p>Se empieza a escribir el libro de la casa. Cada pieza anotada: peso, fecha, nombre, si la trajeron a arreglar. Todavía se usa.</p>
+      <span class="who">— Archivo · Fundado en 1919</span>
+    </div>
+
+    <div class="gen-entry">
+      <div class="when">GEN. VII · 1952 — 1988</div>
+      <h3>Alianzas</h3>
+      <p>Se abre la línea nupcial. Un par al día, martilladas sobre el mismo yunque. La gente trae a los hijos a ver cómo se hacen las suyas.</p>
+      <span class="who">— Línea nupcial · Activa hoy</span>
+    </div>
+
+    <div class="gen-entry">
+      <div class="when">GEN. VIII · 1988 — 2015</div>
+      <h3>Taller <em>abierto</em></h3>
+      <p>Se vidria el fondo del local: quien entra puede mirar trabajar. No hay secretos, hay oficio. A los chicos les dan una lima y un retazo.</p>
+      <span class="who">— Transparencia · Pedagogía</span>
+      <span class="margin">pasen —</span>
+    </div>
+
+    <div class="gen-entry full">
+      <div class="when">GEN. IX · Hoy</div>
+      <h3>Misma mesa, mismos clavos en la madera.</h3>
+      <p>El cuaderno va por el tomo nueve. El yunque suena igual. Los clientes traen anillos de la abuela para fundir y hacer los propios — esa es, quizá, la parte más linda del oficio: que las cosas <em>siguen.</em></p>
+    </div>
+
+  </div>
+
+  <div class="tree-foot">
+    <span>Fuente · Archivo de la casa</span>
+    <span>Libro IX · Folio 001 — 412</span>
+  </div>
+</section>
+
+<!-- TALLER -->
+<section class="taller" id="taller">
+  <div class="taller-inner">
+    <div class="sec-head">
+      <div class="cap">II · Taller</div>
+      <h2>Receta de una <em>pieza</em>.</h2>
+      <div class="cap">Ingreso a las 08.00</div>
+    </div>
+
+    <div class="taller-grid">
+      <div class="img"><img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=1200&q=80" alt="Manos del orfebre" onerror="this.parentElement.style.background='repeating-linear-gradient(45deg,#d6c8ac,#d6c8ac 10px,#c9b98c 10px,#c9b98c 20px)'"/></div>
+
+      <div class="recipe">
+        <h3>Un anillo sello</h3>
+        <div class="rule">
+          <span>Tiempo · 2 jornadas</span>
+          <span>Plata 925 · 24 g</span>
+        </div>
+        <ol>
+          <li>
+            <div>
+              <h4>Fundir</h4>
+              <p>Granalla en crisol de grafito, soplete a llama neutra. Vaciado en lingotera de hierro colado. Espera diez minutos sin tocar.</p>
+              <span class="tool">Herramienta · Soplete de mano</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Forjar</h4>
+              <p>Martillar en frío sobre el yunque hasta llevar el lingote a perfil. Recocer cada pocas pasadas para que el metal no se rompa.</p>
+              <span class="tool">Herramienta · Martillo n.º 3</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Calar y grabar</h4>
+              <p>El sello se dibuja a lápiz, se cala con sierra de pelo y se graba en cinco sesiones. Cada surco lleva su cincel — uno de ellos tiene 180 años.</p>
+              <span class="tool">Herramienta · Cinceles · Grupo A</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h4>Ajustar y pulir</h4>
+              <p>Medición al dedo, ajuste fino, pátina opcional. Lija de 2000, pasta, gamuza. La pieza se anota en el libro antes de salir.</p>
+              <span class="tool">Herramienta · Cuaderno</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="note-card">
+      <p class="hand">"No trabajes con prisa, ni con hambre, ni con miedo.<br/>El metal se da cuenta." —</p>
+      <div class="by">— Dicho del taller · Autor desconocido</div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalogo" id="catalogo">
+  <div class="sec-head">
+    <div class="cap">III · Registro</div>
+    <h2>Libro de <em>piezas</em>.</h2>
+    <div class="cap">Tomo IX · En curso</div>
+  </div>
+
+  <table class="ledger">
+    <thead>
+      <tr>
+        <th style="width:110px;">Lám.</th>
+        <th>Pieza</th>
+        <th>Descripción</th>
+        <th>Peso</th>
+        <th>Desde</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=400&q=80" alt=""/></div></td>
+        <td class="name">Sello<small>N.º 421 — Anillo</small></td>
+        <td class="desc">Anillo sello macizo, plata 925. Seis modelos, grabado incluido.</td>
+        <td class="mono">24 g</td>
+        <td class="mono">$ 420.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=400&q=80" alt=""/></div></td>
+        <td class="name">Alianzas<small>N.º 388 — A medida</small></td>
+        <td class="desc">Par de alianzas martilladas a mano. Grabado interior.</td>
+        <td class="mono">9 g c/u</td>
+        <td class="mono">$ 280.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt=""/></div></td>
+        <td class="name">Retoño<small>N.º 312 — Colgante</small></td>
+        <td class="desc">Colgante en serie corta, cadena criolla 50 cm.</td>
+        <td class="mono">12 g</td>
+        <td class="mono">$ 190.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80" alt=""/></div></td>
+        <td class="name">Gota<small>N.º 274 — Aros</small></td>
+        <td class="desc">Aros pendientes, cuatro largos. Cierre a presión de plata.</td>
+        <td class="mono">6 g par</td>
+        <td class="mono">$ 160.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1535632066274-3f7f26feb089?w=400&q=80" alt=""/></div></td>
+        <td class="name">Cordón<small>N.º 198 — Pulsera</small></td>
+        <td class="desc">Pulsera trenzada a mano en tres hilos, con medallón de firma.</td>
+        <td class="mono">18 g</td>
+        <td class="mono">$ 240.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+      <tr>
+        <td><div class="thumb"><img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt=""/></div></td>
+        <td class="name">Patria<small>N.º 156 — Cadena</small></td>
+        <td class="desc">Cadena de eslabón labrado, fierro al reverso de la casa.</td>
+        <td class="mono">28 g</td>
+        <td class="mono">$ 320.000</td>
+        <td class="cta"><a href="#">Ver →</a></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ENCARGOS -->
+<section class="encargos" id="encargos">
+  <div class="encargos-inner">
+    <div class="eye">IV · Encargos</div>
+    <h2>La pieza que <em>todavía</em> no existe.</h2>
+    <div class="cols">
+      <div>
+        <p>Anillos hechos con plata fundida de la abuela, alianzas grabadas con la letra del novio, colgantes que guardan una fecha o un escudo familiar. Se trabaja con cita, sin apuro, y se puede venir a ver la pieza cuantas veces uno quiera.</p>
+        <a class="cta-dark" href="#">Reservar un café en el taller &nbsp;→</a>
+      </div>
+      <div class="order-form">
+        <h4>Nota de encargo · Modelo</h4>
+        <div class="field"><span>Cliente</span><span class="v">Familia que visita el taller</span></div>
+        <div class="field"><span>Pieza</span><span class="v">Anillo sello con escudo</span></div>
+        <div class="field"><span>Material</span><span class="v">Plata 925 · piedras propias</span></div>
+        <div class="field"><span>Plazo</span><span class="v">Seis a diez semanas</span></div>
+        <div class="field"><span>Grabado</span><span class="v">Incluido, letra de la casa</span></div>
+        <div class="field" style="border:none;"><span>Encuentros</span><span class="v">Tres, sin cargo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot">
+    <div>
+      <div class="brand">Joyería<br/><em>Pallarols</em><small>MDCCL — MMXXVI · Buenos Aires</small></div>
+    </div>
+    <div>
+      <h5>La casa</h5>
+      <a href="#">Historia</a>
+      <a href="#">Taller</a>
+      <a href="#">Archivo</a>
+      <a href="#">Prensa</a>
+    </div>
+    <div>
+      <h5>Piezas</h5>
+      <a href="#">Anillos</a>
+      <a href="#">Alianzas</a>
+      <a href="#">Colgantes</a>
+      <a href="#">Aros · Pulseras</a>
+    </div>
+    <div>
+      <h5>Visita</h5>
+      <p>Defensa 1039</p>
+      <p>San Telmo, CABA</p>
+      <p>Lun. a Sáb. · con cita</p>
+      <p>+54 11 4361 ·· ··</p>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>Colofón · Este sitio se compuso con EB Garamond y JetBrains Mono</span>
+    <span>© 2026 · Diseño de demostración</span>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => {
+  for (const e of es) if (e.isIntersecting) { e.target.style.opacity=1; e.target.style.transform='none'; }
+}, { threshold: 0.1 });
+document.querySelectorAll('.gen-entry, .recipe li, .ledger tbody tr, .epigraph p, .note-card').forEach((el, i) => {
+  el.style.opacity = 0;
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = `opacity 1s ease ${(i%6)*0.06}s, transform 1s ease ${(i%6)*0.06}s`;
+  io.observe(el);
+});
+</script>
+
+</body>
+</html>
