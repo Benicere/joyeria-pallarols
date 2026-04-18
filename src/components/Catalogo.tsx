@@ -90,7 +90,7 @@ export default function Catalogo() {
 
         <div className="cat-foot">
           <span className="n">Mostrando 7 de 34 piezas</span>
-          <a href="#">Ver catálogo completo →</a>
+          <a href="/piezas">Ver catálogo completo →</a>
         </div>
       </div>
     </section>

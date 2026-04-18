@@ -43,7 +43,7 @@ export default function Encargos() {
         </div>
 
         <div className="enc-cta">
-          <a href="#">Reservar un encuentro &nbsp;→</a>
+          <a href="/encargos">Reservar un encuentro &nbsp;→</a>
         </div>
       </div>
     </section>
