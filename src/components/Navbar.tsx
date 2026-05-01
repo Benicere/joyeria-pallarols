@@ -1,26 +1,39 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useT } from "@/lib/i18n";
 
 export default function Navbar() {
   const [solid, setSolid] = useState(false);
+  const ticking = useRef(false);
+  const { lang, t, toggle } = useT();
 
   useEffect(() => {
-    const onScroll = () => {
+    const check = () => {
       setSolid(window.scrollY > window.innerHeight * 0.3);
+      ticking.current = false;
     };
-    onScroll();
+    const onScroll = () => {
+      if (ticking.current) return;
+      ticking.current = true;
+      requestAnimationFrame(check);
+    };
+    check();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
     <nav className={`nav ${solid ? "is-solid" : ""}`}>
       <div className="left">
-        <Link href="/linaje">Casa</Link>
-        <Link href="/taller">Taller</Link>
-        <Link href="/piezas">Piezas</Link>
+        <Link href="/linaje">{t.nav.casa}</Link>
+        <Link href="/taller">{t.nav.taller}</Link>
+        <Link href="/piezas">{t.nav.piezas}</Link>
       </div>
       <div className="brand">
         <Link href="/">
@@ -28,9 +41,13 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="right">
-        <Link href="/encargos">Encargos</Link>
-        <a href="#">Visita</a>
-        <a href="#">Es / En</a>
+        <Link href="/encargos">{t.nav.encargos}</Link>
+        <Link href="/visita">{t.nav.visita}</Link>
+        <button type="button" className="lang-toggle" onClick={toggle} aria-label="Toggle language">
+          <span className={lang === "es" ? "is-active" : ""}>Es</span>
+          <span className="sep">/</span>
+          <span className={lang === "en" ? "is-active" : ""}>En</span>
+        </button>
       </div>
     </nav>
   );

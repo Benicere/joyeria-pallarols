@@ -1,39 +1,23 @@
-const encargoSteps = [
-  {
-    n: "I",
-    h: "Un café",
-    p: "Nos encontramos en el taller. Traé lo que tengas: una foto, una piedra, un dibujo en servilleta. Charlamos.",
-  },
-  {
-    n: "II",
-    h: "Dos bocetos a mano",
-    p: "Dibujos a escala real con peso aproximado. Los revisamos juntos, sin compromiso. Si algo no cierra, volvemos.",
-  },
-  {
-    n: "III",
-    h: "Seis a diez semanas",
-    p: "Podés venir a ver la pieza en proceso cuantas veces quieras — es parte de tenerla. Al final, entra al libro.",
-  },
-];
+"use client";
+
+import { useT } from "@/lib/i18n";
 
 export default function Encargos() {
+  const { t } = useT();
+  const e = t.enc;
   return (
     <section className="enc" id="enc">
       <div className="enc-inner">
         <div className="enc-top">
-          <div className="eyebrow">04 · Encargos</div>
+          <div className="eyebrow">{e.eyebrow}</div>
           <h2>
-            Algo que <em>todavía</em> no existe.
+            {e.titleA} <em>{e.titleEm}</em> {e.titleB}
           </h2>
-          <p className="sub">
-            Anillos con plata heredada, alianzas grabadas con la letra de quien
-            las lleva, colgantes que guardan una inicial o una fecha. Con cita,
-            sin apuro.
-          </p>
+          <p className="sub">{e.lede}</p>
         </div>
 
         <div className="enc-steps">
-          {encargoSteps.map((s) => (
+          {e.steps.map((s) => (
             <div className="enc-step reveal" key={s.n}>
               <div className="n">{s.n}</div>
               <h4>{s.h}</h4>
@@ -43,7 +27,7 @@ export default function Encargos() {
         </div>
 
         <div className="enc-cta">
-          <a href="/encargos">Reservar un encuentro &nbsp;→</a>
+          <a href="/encargos">{e.cta}</a>
         </div>
       </div>
     </section>

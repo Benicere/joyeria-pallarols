@@ -1,4 +1,9 @@
+"use client";
+
+import { useT } from "@/lib/i18n";
+
 export default function HeroSection() {
+  const { t } = useT();
   return (
     <section className="hero">
       <div className="bg" data-parallax="0.3">
@@ -8,23 +13,20 @@ export default function HeroSection() {
         />
       </div>
       <div className="content">
-        <div className="eyebrow">Casa fundada en 1750 · Plata 925</div>
+        <div className="eyebrow">{t.hero.eyebrow}</div>
         <h1>
-          Plata que
+          {t.hero.titleA}
           <br />
-          lleva el
+          {t.hero.titleB}
           <br />
-          <em>tiempo</em> dentro.
+          <em>{t.hero.titleEm}</em> {t.hero.titleC}
         </h1>
         <div className="sub">
           <div className="ticker">
-            Gen. <em>IX</em> · Buenos Aires
+            {t.hero.ticker} <em>IX</em> · {t.hero.tickerCity}
           </div>
-          <p>
-            Piezas únicas y series cortas, trabajadas a mano en un taller que abrió
-            sus puertas hace nueve generaciones.
-          </p>
-          <div className="scroll">Scroll</div>
+          <p>{t.hero.body}</p>
+          <div className="scroll">{t.hero.scroll}</div>
         </div>
       </div>
     </section>

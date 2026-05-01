@@ -1,13 +1,19 @@
+"use client";
+
+import { useT } from "@/lib/i18n";
+
 export default function Manifiesto() {
+  const { t } = useT();
+  const m = t.manifesto;
   return (
     <section className="man">
-      <div className="eyebrow">Manifiesto</div>
+      <div className="eyebrow">{m.eyebrow}</div>
       <p className="reveal">
-        El oficio no se <em>hereda</em> en un día.
+        {m.l1a}<em>{m.l1em}</em>{m.l1b}
         <br />
-        Se pasa en <strong>silencio</strong>, golpe a golpe,
+        {m.l2a}<strong>{m.l2strong}</strong>{m.l2b}
         <br />
-        hasta que la mano recuerda lo que la <em>cabeza</em> ya olvidó.
+        {m.l3a}<em>{m.l3em}</em>{m.l3b}
       </p>
     </section>
   );

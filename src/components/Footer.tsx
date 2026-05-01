@@ -1,41 +1,41 @@
+"use client";
+
+import { useT } from "@/lib/i18n";
+
 export default function Footer() {
+  const { t } = useT();
+  const f = t.footer;
   return (
     <footer className="site-footer">
       <div className="f-top">
         <div>
           <h3 className="big">
-            Joyería
+            {f.brand}
             <br />
-            <em>Pallarols</em>
+            <em>{f.brandEm}</em>
           </h3>
         </div>
         <div className="f-info">
           <div>
-            <h5>Casa</h5>
-            <a href="#">Historia</a>
-            <a href="#">Taller</a>
-            <a href="#">Archivo</a>
-            <a href="#">Prensa</a>
+            <h5>{f.casaH}</h5>
+            {f.casa.map((x) => <a href="#" key={x}>{x}</a>)}
           </div>
           <div>
-            <h5>Piezas</h5>
-            <a href="#">Anillos</a>
-            <a href="#">Alianzas</a>
-            <a href="#">Colgantes</a>
-            <a href="#">Aros · Pulseras</a>
+            <h5>{f.piezasH}</h5>
+            {f.piezas.map((x) => <a href="#" key={x}>{x}</a>)}
           </div>
           <div>
-            <h5>Contacto</h5>
-            <p>Defensa 1039, San Telmo</p>
-            <p>Lunes a sábado</p>
-            <p>Con cita previa</p>
-            <p style={{ color: "var(--gold)", marginTop: 12 }}>+54 11 4361 ·· ··</p>
+            <h5>{f.contactoH}</h5>
+            <p>{f.contacto1}</p>
+            <p>{f.contacto2}</p>
+            <p>{f.contacto3}</p>
+            <p style={{ color: "var(--gold)", marginTop: 12 }}>{f.phone}</p>
           </div>
         </div>
       </div>
       <div className="f-legal">
-        <span>© MMXXVI · Diseño de demostración</span>
-        <span>Plata 925 · Buenos Aires, Argentina</span>
+        <span>{f.legalL}</span>
+        <span>{f.legalR}</span>
       </div>
     </footer>
   );
