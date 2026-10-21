@@ -2,8 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Marquee from "@/components/Marquee";
 import Manifiesto from "@/components/Manifiesto";
-import Linaje from "@/components/Linaje";
-import Taller from "@/components/Taller";
 import Catalogo from "@/components/Catalogo";
 import Encargos from "@/components/Encargos";
 import Footer from "@/components/Footer";
@@ -16,8 +14,6 @@ export default function Home() {
       <HeroSection />
       <Marquee />
       <Manifiesto />
-      <Linaje />
-      <Taller />
       <Catalogo />
       <Encargos />
       <Footer />

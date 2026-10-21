@@ -9,10 +9,9 @@ export default function Marquee() {
     <div className="marquee" aria-hidden="true">
       <span>
         {m.silver} <em>925</em> &nbsp;·&nbsp; {m.handmade} &nbsp;·&nbsp; {m.city}
-        &nbsp;·&nbsp; <em>1750</em> — 2026 &nbsp;·&nbsp; {m.generations}
-        &nbsp;·&nbsp; {m.silver} <em>925</em> &nbsp;·&nbsp; {m.handmade}
-        &nbsp;·&nbsp; {m.city} &nbsp;·&nbsp; <em>1750</em> — 2026
-        &nbsp;·&nbsp; {m.generations} &nbsp;·&nbsp;
+        &nbsp;·&nbsp; {m.unique} &nbsp;·&nbsp; {m.silver} <em>925</em>
+        &nbsp;·&nbsp; {m.handmade} &nbsp;·&nbsp; {m.city}
+        &nbsp;·&nbsp; {m.unique} &nbsp;·&nbsp;
       </span>
     </div>
   );

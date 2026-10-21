@@ -51,7 +51,6 @@ export default function VisitaPage() {
           <a href={`mailto:${t.visita.email}?subject=Visita%20al%20taller`}>
             {t.visita.cta}
           </a>
-          <p className="note">{t.visita.note}</p>
         </div>
 
         <div className="visita-map">

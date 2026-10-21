@@ -5,11 +5,11 @@ import Providers from "./providers";
 export const metadata: Metadata = {
   title: "Joyería Pallarols — Cinematográfica",
   description:
-    "Casa fundada en 1750. Plata 925 forjada a mano en Buenos Aires. Nueve generaciones al mismo banco.",
+    "Plata 925 forjada a mano en San Telmo, Buenos Aires. Piezas únicas, series cortas y encargos.",
   openGraph: {
     title: "Joyería Pallarols",
     description:
-      "Piezas únicas y series cortas, trabajadas a mano. Nueve generaciones de oficio.",
+      "Piezas únicas y series cortas, trabajadas a mano en plata 925.",
     type: "website",
   },
 };

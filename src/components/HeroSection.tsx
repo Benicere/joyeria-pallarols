@@ -23,7 +23,7 @@ export default function HeroSection() {
         </h1>
         <div className="sub">
           <div className="ticker">
-            {t.hero.ticker} <em>IX</em> · {t.hero.tickerCity}
+            {t.hero.ticker} <em>925</em> · {t.hero.tickerCity}
           </div>
           <p>{t.hero.body}</p>
           <div className="scroll">{t.hero.scroll}</div>

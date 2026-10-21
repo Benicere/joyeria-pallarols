@@ -31,9 +31,8 @@ export default function Navbar() {
   return (
     <nav className={`nav ${solid ? "is-solid" : ""}`}>
       <div className="left">
-        <Link href="/linaje">{t.nav.casa}</Link>
-        <Link href="/taller">{t.nav.taller}</Link>
         <Link href="/piezas">{t.nav.piezas}</Link>
+        <Link href="/encargos">{t.nav.encargos}</Link>
       </div>
       <div className="brand">
         <Link href="/">
@@ -41,7 +40,6 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="right">
-        <Link href="/encargos">{t.nav.encargos}</Link>
         <Link href="/visita">{t.nav.visita}</Link>
         <button type="button" className="lang-toggle" onClick={toggle} aria-label="Toggle language">
           <span className={lang === "es" ? "is-active" : ""}>Es</span>

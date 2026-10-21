@@ -17,12 +17,8 @@ export default function Footer() {
         </div>
         <div className="f-info">
           <div>
-            <h5>{f.casaH}</h5>
-            {f.casa.map((x) => <a href="#" key={x}>{x}</a>)}
-          </div>
-          <div>
             <h5>{f.piezasH}</h5>
-            {f.piezas.map((x) => <a href="#" key={x}>{x}</a>)}
+            {f.piezas.map((x) => <a href="/piezas" key={x}>{x}</a>)}
           </div>
           <div>
             <h5>{f.contactoH}</h5>
