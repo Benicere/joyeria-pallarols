@@ -140,7 +140,7 @@ body::after {
 .ed { position: relative; overflow: hidden; cursor: pointer; }
 .ed .img { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--panel); }
 .ed .img img { width: 100%; height: 100%; object-fit: cover; transition: transform 2.5s cubic-bezier(.2,.7,.2,1); filter: saturate(.9); }
-.ed:hover .img img { transform: scale(1.06); }
+.ed:hover .img img { transform: scale(1.03); }
 .ed::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(14,13,12,.85) 0%, rgba(14,13,12,0) 50%); pointer-events: none; }
 .ed .caption { position: absolute; inset: auto 0 0 0; padding: 24px 28px; z-index: 2; display: flex; justify-content: space-between; align-items: end; gap: 16px; }
 .ed .caption h3 { margin: 0; font-size: 36px; font-weight: 400; font-style: italic; letter-spacing: -0.01em; line-height: 1; }
@@ -195,6 +195,27 @@ body::after {
 .cat-page { padding: 80px 40px 140px; }
 .cat-page-inner { max-width: 1600px; margin: 0 auto; }
 .grid-uniform { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+/* LIGHTBOX */
+.lb { position: fixed; inset: 0; z-index: 1000; background: rgba(14,13,12,.985); display: flex; align-items: center; justify-content: center; padding: 64px 96px; animation: lb-in .3s ease; }
+.lb figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 20px; max-width: 100%; max-height: 100%; }
+.lb img { display: block; max-width: 100%; max-height: calc(100vh - 200px); width: auto; height: auto; object-fit: contain; }
+.lb figcaption { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; justify-content: center; text-align: center; }
+.lb-title { font-size: 32px; font-style: italic; line-height: 1; }
+.lb-num, .lb-meta { font-family: "Inter", sans-serif; font-size: 10.5px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ivory-dim); }
+.lb button { position: absolute; background: none; border: 0; color: var(--ivory-dim); cursor: pointer; font-family: "Cormorant Garamond", serif; line-height: 1; padding: 12px; transition: color .3s; }
+.lb button:hover { color: var(--gold); }
+.lb-close { top: 16px; right: 24px; font-size: 44px; }
+.lb-nav { top: 50%; transform: translateY(-50%); font-size: 64px; }
+.lb-nav.prev { left: 16px; }
+.lb-nav.next { right: 16px; }
+@keyframes lb-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 700px) {
+  .lb { padding: 56px 16px 96px; }
+  .lb-nav { top: auto; bottom: 16px; transform: none; }
+  .lb-nav.prev { left: 25%; }
+  .lb-nav.next { right: 25%; }
+}
 .grid-uniform .ed { aspect-ratio: 3/4; grid-column: span 1; }
 @media (max-width: 1100px) {
   .grid-uniform { grid-template-columns: repeat(2, 1fr); gap: 24px; }

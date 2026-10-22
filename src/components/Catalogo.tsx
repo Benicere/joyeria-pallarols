@@ -2,7 +2,7 @@
 
 import { useT } from "@/lib/i18n";
 import { pieces, HOME_COUNT } from "@/lib/pieces";
-import PieceCard from "@/components/PieceCard";
+import PieceGallery from "@/components/PieceGallery";
 
 export default function Catalogo() {
   const { t, lang } = useT();
@@ -22,11 +22,7 @@ export default function Catalogo() {
           </div>
         </div>
 
-        <div className="grid-uniform">
-          {pieces.slice(0, HOME_COUNT).map((p) => (
-            <PieceCard piece={p} lang={lang} className="reveal" key={p.num} />
-          ))}
-        </div>
+        <PieceGallery pieces={pieces.slice(0, HOME_COUNT)} lang={lang} reveal />
 
         <div className="cat-foot">
           <a href="/piezas">{c.footCta}</a>
