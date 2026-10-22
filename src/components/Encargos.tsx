@@ -2,19 +2,21 @@
 
 import { useT } from "@/lib/i18n";
 
-export default function Encargos() {
+export default function Encargos({ showHeader = true, showCta = true }: { showHeader?: boolean; showCta?: boolean }) {
   const { t } = useT();
   const e = t.enc;
   return (
     <section className="enc" id="enc">
       <div className="enc-inner">
-        <div className="enc-top">
-          <div className="eyebrow">{e.eyebrow}</div>
-          <h2>
-            {e.titleA} <em>{e.titleEm}</em> {e.titleB}
-          </h2>
-          <p className="sub">{e.lede}</p>
-        </div>
+        {showHeader && (
+          <div className="enc-top">
+            <div className="eyebrow">{e.eyebrow}</div>
+            <h2>
+              {e.titleA} <em>{e.titleEm}</em> {e.titleB}
+            </h2>
+            <p className="sub">{e.lede}</p>
+          </div>
+        )}
 
         <div className="enc-steps">
           {e.steps.map((s) => (
@@ -26,9 +28,11 @@ export default function Encargos() {
           ))}
         </div>
 
-        <div className="enc-cta">
-          <a href="/encargos">{e.cta}</a>
-        </div>
+        {showCta && (
+          <div className="enc-cta">
+            <a href="/encargos">{e.cta}</a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -162,7 +162,9 @@ body::after {
 .enc-step .n { font-family: "Cormorant Garamond", serif; font-size: 72px; font-style: italic; color: var(--gold-deep); line-height: 1; margin-bottom: 32px; }
 .enc-step h4 { margin: 0 0 16px; font-weight: 400; font-size: 26px; font-style: italic; }
 .enc-step p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ivory-dim); }
+.enc-steps:first-child { margin-top: 0; }
 .enc-cta { margin-top: 100px; text-align: center; }
+.interior .enc-cta { margin-top: 72px; text-align: left; }
 .enc-cta a { display: inline-flex; align-items: center; gap: 18px; padding: 24px 48px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-family: "Inter", sans-serif; font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; transition: all .4s; }
 .enc-cta a:hover { background: var(--gold); color: var(--bg); }
 

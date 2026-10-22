@@ -19,19 +19,16 @@ export default function EncargosPage() {
         lede={e.lede}
       />
 
-      <section className="interior">
-        <h2>{e.pageH2A} <em>{e.pageH2Em}</em>.</h2>
-        <p>{e.pageP1}</p>
-        <p>{e.pageP2}</p>
-      </section>
-
-      <Encargos />
+      <Encargos showHeader={false} showCta={false} />
 
       <section className="interior">
-        <h2>{e.faqA} <em>{e.faqEm}</em>.</h2>
-        <p><em>{e.faq1Q}</em>{e.faq1A}</p>
-        <p><em>{e.faq2Q}</em>{e.faq2A}</p>
-        <p><em>{e.faq3Q}</em>{e.faq3A}</p>
+        <h2>{e.detailsA} <em>{e.detailsEm}</em>.</h2>
+        {e.details.map((d) => (
+          <p key={d.h}><em>{d.h}</em>{d.p}</p>
+        ))}
+        <div className="enc-cta">
+          <a href="/visita">{e.cta}</a>
+        </div>
       </section>
 
       <Footer />
