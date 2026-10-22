@@ -1,10 +1,5 @@
 export type Lang = "es" | "en";
 
-export const whatsapp = {
-  label: "11 3647-4445",
-  url: "https://wa.me/5491136474445",
-};
-
 const es = {
   nav: {
     piezas: "Piezas",
@@ -70,7 +65,7 @@ const es = {
     eyebrow: "03 · Visita",
     titleA: "Con",
     titleEm: "cita previa.",
-    lede: "El taller recibe con cita previa. Es la única manera de dedicarle a cada visita el tiempo que merece.",
+    lede: "Es la única manera de dedicarle a cada visita el tiempo que merece.",
     hoursTitle: "Horario",
     hours: [
       { d: "Lunes a viernes", h: "11:00 – 19:00" },
@@ -159,7 +154,7 @@ const en: typeof es = {
     eyebrow: "03 · Visit",
     titleA: "By",
     titleEm: "appointment.",
-    lede: "The workshop receives by appointment. It is the only way to give each visit the time it deserves.",
+    lede: "It is the only way to give each visit the time it deserves.",
     hoursTitle: "Hours",
     hours: [
       { d: "Monday to Friday", h: "11:00 – 19:00" },

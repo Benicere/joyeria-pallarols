@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mariacarolinapallarols.com"),
   title: "Joyería Pallarols — Cinematográfica",
   description:
     "Plata 925 forjada a mano en Buenos Aires. Piezas únicas, series cortas y encargos.",

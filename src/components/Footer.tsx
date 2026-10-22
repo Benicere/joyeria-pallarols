@@ -1,7 +1,7 @@
 "use client";
 
 import { useT } from "@/lib/i18n";
-import { whatsapp } from "@/lib/dictionary";
+import WhatsAppLink from "@/components/WhatsAppLink";
 
 export default function Footer() {
   const { t } = useT();
@@ -25,14 +25,7 @@ export default function Footer() {
             <h5>{f.contactoH}</h5>
             <p>{f.contacto2}</p>
             <p>{f.contacto3}</p>
-            <a
-              href={whatsapp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--gold)", marginTop: 12 }}
-            >
-              WhatsApp · {whatsapp.label}
-            </a>
+            <WhatsAppLink className="f-wa" />
           </div>
         </div>
       </div>

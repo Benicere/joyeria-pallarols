@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import CinematicEffects from "@/components/CinematicEffects";
 import { useT } from "@/lib/i18n";
-import { whatsapp } from "@/lib/dictionary";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import { whatsapp } from "@/lib/contact";
 
 export default function VisitaPage() {
   const { t } = useT();
@@ -35,14 +36,14 @@ export default function VisitaPage() {
           <div className="block">
             <h3>{t.visita.contactTitle}</h3>
             <div className="lines">
-              <div><a href={whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp · {whatsapp.label}</a></div>
+              <div><WhatsAppLink /></div>
               <div><a href={`mailto:${t.visita.email}`}>{t.visita.email}</a></div>
             </div>
           </div>
         </div>
 
         <div className="visita-cta">
-          <a href={`mailto:${t.visita.email}?subject=Visita%20al%20taller`}>
+          <a href={whatsapp.url} target="_blank" rel="noopener noreferrer">
             {t.visita.cta}
           </a>
         </div>
