@@ -1,5 +1,10 @@
 export type Lang = "es" | "en";
 
+export const whatsapp = {
+  label: "11 3647-4445",
+  url: "https://wa.me/5491136474445",
+};
+
 const es = {
   nav: {
     piezas: "Piezas",
@@ -14,7 +19,6 @@ const es = {
     titleC: "dentro.",
     ticker: "Plata",
     tickerCity: "Buenos Aires",
-    body: "Piezas únicas y series cortas, trabajadas a mano en nuestro taller de San Telmo.",
     scroll: "Scroll",
   },
   marquee: {
@@ -64,8 +68,8 @@ const es = {
   },
   visita: {
     eyebrow: "03 · Visita",
-    titleA: "Defensa 1039,",
-    titleEm: "San Telmo.",
+    titleA: "Con",
+    titleEm: "cita previa.",
     lede: "El taller recibe con cita previa. Es la única manera de dedicarle a cada visita el tiempo que merece.",
     hoursTitle: "Horario",
     hours: [
@@ -73,10 +77,7 @@ const es = {
       { d: "Sábado", h: "11:00 – 14:00" },
       { d: "Domingo", h: "Cerrado" },
     ],
-    addressTitle: "Dirección",
-    addressLines: ["Defensa 1039", "San Telmo", "Buenos Aires · Argentina"],
     contactTitle: "Contacto",
-    phone: "+54 11 4361 ·· ··",
     email: "taller@pallarols.com.ar",
     cta: "Reservar cita  →",
   },
@@ -86,10 +87,8 @@ const es = {
     piezasH: "Piezas",
     piezas: ["Anillos", "Alianzas", "Colgantes", "Aros · Pulseras"],
     contactoH: "Contacto",
-    contacto1: "Defensa 1039, San Telmo",
     contacto2: "Lunes a sábado",
     contacto3: "Con cita previa",
-    phone: "+54 11 4361 ·· ··",
     legalL: "© MMXXVI · Diseño de demostración",
     legalR: "Plata 925 · Buenos Aires, Argentina",
   },
@@ -109,7 +108,6 @@ const en: typeof es = {
     titleC: "within.",
     ticker: "Silver",
     tickerCity: "Buenos Aires",
-    body: "Unique pieces and short series, worked by hand in our San Telmo workshop.",
     scroll: "Scroll",
   },
   marquee: {
@@ -159,8 +157,8 @@ const en: typeof es = {
   },
   visita: {
     eyebrow: "03 · Visit",
-    titleA: "Defensa 1039,",
-    titleEm: "San Telmo.",
+    titleA: "By",
+    titleEm: "appointment.",
     lede: "The workshop receives by appointment. It is the only way to give each visit the time it deserves.",
     hoursTitle: "Hours",
     hours: [
@@ -168,10 +166,7 @@ const en: typeof es = {
       { d: "Saturday", h: "11:00 – 14:00" },
       { d: "Sunday", h: "Closed" },
     ],
-    addressTitle: "Address",
-    addressLines: ["Defensa 1039", "San Telmo", "Buenos Aires · Argentina"],
     contactTitle: "Contact",
-    phone: "+54 11 4361 ·· ··",
     email: "taller@pallarols.com.ar",
     cta: "Book a visit  →",
   },
@@ -181,10 +176,8 @@ const en: typeof es = {
     piezasH: "Pieces",
     piezas: ["Rings", "Wedding bands", "Pendants", "Earrings · Bracelets"],
     contactoH: "Contact",
-    contacto1: "Defensa 1039, San Telmo",
     contacto2: "Monday to Saturday",
     contacto3: "By appointment",
-    phone: "+54 11 4361 ·· ··",
     legalL: "© MMXXVI · Demo design",
     legalR: "925 Silver · Buenos Aires, Argentina",
   },

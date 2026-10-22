@@ -25,7 +25,6 @@ export default function HeroSection() {
           <div className="ticker">
             {t.hero.ticker} <em>925</em> · {t.hero.tickerCity}
           </div>
-          <p>{t.hero.body}</p>
           <div className="scroll">{t.hero.scroll}</div>
         </div>
       </div>

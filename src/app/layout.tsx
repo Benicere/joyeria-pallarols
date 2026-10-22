@@ -5,7 +5,7 @@ import Providers from "./providers";
 export const metadata: Metadata = {
   title: "Joyería Pallarols — Cinematográfica",
   description:
-    "Plata 925 forjada a mano en San Telmo, Buenos Aires. Piezas únicas, series cortas y encargos.",
+    "Plata 925 forjada a mano en Buenos Aires. Piezas únicas, series cortas y encargos.",
   openGraph: {
     title: "Joyería Pallarols",
     description:
