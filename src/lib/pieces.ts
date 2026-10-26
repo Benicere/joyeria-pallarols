@@ -14,7 +14,7 @@ const entries: Entry[] = [
   [["Follaje", "Foliage"], ["Colgante · Plata", "Pendant · Silver"]],
   [["Calado", "Openwork"], ["Anillo · Oro", "Ring · Gold"]],
   [["Monograma", "Monogram"], ["Hebilla · Plata cincelada", "Buckle · Chased silver"]],
-  [["Querubín", "Cherub"], ["Broche", "Brooch"]],
+  [["Turquesa", "Turquoise"], ["Anillo · Plata cincelada", "Ring · Chased silver"]],
   [["Mate", "Mate"], ["Mate y bombilla · Plata", "Mate and bombilla · Silver"]],
   [["Voluta", "Scroll"], ["Hebilla labrada", "Carved buckle"]],
   [["Gemelos", "Cufflinks"], ["Gemelos · Plata calada", "Cufflinks · Pierced silver"]],
