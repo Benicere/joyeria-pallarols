@@ -2,6 +2,7 @@
 
 import { useT } from "@/lib/i18n";
 import WhatsAppLink from "@/components/WhatsAppLink";
+import { instagram } from "@/lib/contact";
 
 export default function Footer() {
   const { t } = useT();
@@ -26,6 +27,9 @@ export default function Footer() {
             <p>{f.contacto2}</p>
             <p>{f.contacto3}</p>
             <WhatsAppLink className="f-wa" />
+            <a href={instagram.url} target="_blank" rel="noopener noreferrer" className="f-ig">
+              Instagram · {instagram.label}
+            </a>
           </div>
         </div>
       </div>
