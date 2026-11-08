@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="brand">
         <Link href="/" aria-label="Joyería Pallarols">
           {/* Emblema de la casa: Baco con hojas de parra, en plata. */}
-          <img src="/brand/baco-plata.webp" alt="" width={819} height={422} className="brand-mark" />
+          <img src="/company/logo.webp" alt="" width={819} height={422} className="brand-mark" />
           <span>
             Joyería <em>Pallarols</em>
           </span>
