@@ -4,7 +4,22 @@ const es = {
   nav: {
     piezas: "Piezas",
     encargos: "Encargos",
+    comprar: "Comprar ya",
     visita: "Visita",
+  },
+  comprar: {
+    eyebrow: "Mercado Libre",
+    titleA: "Comprar",
+    titleEm: "ya.",
+    lede: "Las piezas disponibles hoy en nuestra tienda de Mercado Libre. La compra se hace en Mercado Libre, con sus medios de pago, sus envíos y su compra protegida.",
+    buy: "Comprar en Mercado Libre",
+    freeShipping: "Envío gratis",
+    lastUnit: "Última unidad",
+    units: "disponibles",
+    seeAll: "Ver la tienda completa en Mercado Libre →",
+    emptyTitle: "Muy pronto, acá.",
+    emptyText: "Estamos conectando la tienda de Mercado Libre. Mientras tanto, cualquier pieza se puede encargar a medida.",
+    emptyCta: "Ver encargos  →",
   },
   hero: {
     eyebrow: "Hecho a mano · Plata 925",
@@ -86,6 +101,7 @@ const es = {
     contacto3: "Con cita previa",
     legalL: "© MMXXVI · Diseño de demostración",
     legalR: "Plata 925 · Buenos Aires, Argentina",
+    devBy: "Desarrollado por",
   },
 };
 
@@ -93,7 +109,22 @@ const en: typeof es = {
   nav: {
     piezas: "Pieces",
     encargos: "Commissions",
+    comprar: "Shop now",
     visita: "Visit",
+  },
+  comprar: {
+    eyebrow: "Mercado Libre",
+    titleA: "Shop",
+    titleEm: "now.",
+    lede: "The pieces available today in our Mercado Libre store. You buy through Mercado Libre, with its payment methods, shipping and buyer protection.",
+    buy: "Buy on Mercado Libre",
+    freeShipping: "Free shipping",
+    lastUnit: "Last one",
+    units: "available",
+    seeAll: "See the full store on Mercado Libre →",
+    emptyTitle: "Coming soon.",
+    emptyText: "We are connecting our Mercado Libre store. In the meantime, any piece can be made to order.",
+    emptyCta: "See commissions  →",
   },
   hero: {
     eyebrow: "Handmade · 925 Silver",
@@ -175,6 +206,7 @@ const en: typeof es = {
     contacto3: "By appointment",
     legalL: "© MMXXVI · Demo design",
     legalR: "925 Silver · Buenos Aires, Argentina",
+    devBy: "Developed by",
   },
 };
 

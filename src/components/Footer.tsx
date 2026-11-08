@@ -3,6 +3,7 @@
 import { useT } from "@/lib/i18n";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import { instagram } from "@/lib/contact";
+import AurosentLogo from "@/components/AurosentLogo";
 
 export default function Footer() {
   const { t } = useT();
@@ -36,6 +37,13 @@ export default function Footer() {
       <div className="f-legal">
         <span>{f.legalL}</span>
         <span>{f.legalR}</span>
+      </div>
+      {/* Firma de la agencia: el logo plateado se dora al acercarse. */}
+      <div className="f-dev">
+        <span>{f.devBy}</span>
+        <a href="https://aurosent.com" target="_blank" rel="noopener noreferrer" aria-label="Aurosent">
+          <AurosentLogo className="h-[15px]" />
+        </a>
       </div>
     </footer>
   );

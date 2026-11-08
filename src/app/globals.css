@@ -248,3 +248,47 @@ body::after {
   .nav .right { display: none; }
   .hero .sub { grid-template-columns: 1fr; gap: 20px; }
 }
+
+/* NAV · emblema de Baco sobre "Joyería Pallarols" (se achica al hacer scroll) */
+.nav .brand a { display: inline-flex; flex-direction: column; align-items: center; gap: 6px; opacity: 1; }
+.nav .brand .brand-mark { height: 56px; width: auto; transition: height .35s ease; }
+.nav.is-solid .brand .brand-mark { height: 34px; }
+@media (max-width: 600px) {
+  /* Tres links + emblema no entran en una fila: emblema arriba, links abajo. */
+  .nav { grid-template-columns: 1fr; justify-items: center; row-gap: 10px; padding: 12px 16px; }
+  .nav.is-solid { padding: 10px 16px; }
+  .nav .brand { order: -1; font-size: 19px; }
+  .nav .brand .brand-mark { height: 40px; }
+  .nav.is-solid .brand .brand-mark { height: 26px; }
+  .nav .left { gap: 18px; font-size: 10px; letter-spacing: 0.18em; }
+  .page-header { padding-top: 190px; }
+}
+
+/* FOOTER · firma de la agencia, de lado a lado debajo del footer */
+.f-dev { margin: 48px -40px -60px; padding: 20px 40px; background: #090807; border-top: 1px solid var(--line); display: flex; justify-content: center; align-items: center; gap: 10px; font-family: "Inter", sans-serif; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--silver); }
+.f-dev a { display: inline-flex; }
+
+/* COMPRAR YA · piezas publicadas en Mercado Libre */
+.ml-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.ml-card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); }
+.ml-img { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--bg-2); }
+.ml-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .6s ease, transform 2.5s cubic-bezier(.2,.7,.2,1); }
+.ml-img .ml-img-2 { opacity: 0; }
+.ml-card:hover .ml-img .ml-img-2 { opacity: 1; }
+.ml-card:hover .ml-img img { transform: scale(1.03); }
+.ml-body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; flex: 1; }
+.ml-body h3 { margin: 0; font-size: 26px; font-weight: 400; font-style: italic; line-height: 1.15; }
+.ml-price { font-family: "Inter", sans-serif; font-size: 24px; font-weight: 300; color: var(--ivory); }
+.ml-tags { display: flex; gap: 14px; flex-wrap: wrap; min-height: 14px; font-family: "Inter", sans-serif; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ivory-dim); }
+.ml-tags .ml-free { color: #2fbf71; }
+/* El botón es el de Mercado Libre (su azul): la compra se hace allá. */
+.ml-buy { margin-top: auto; display: block; text-align: center; padding: 16px 20px; background: #3483fa; color: #fff; text-decoration: none; border-radius: 6px; font-family: "Inter", sans-serif; font-size: 15px; font-weight: 500; transition: background .25s; }
+.ml-buy:hover { background: #2968c8; }
+.ml-buy:focus-visible { outline: 2px solid var(--ivory); outline-offset: 3px; }
+.ml-empty { max-width: 640px; padding: 40px 0 20px; }
+.ml-empty h2 { font-weight: 300; font-size: clamp(40px, 5vw, 72px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 24px; }
+.ml-empty h2 em { color: var(--gold); }
+.ml-empty p { font-style: italic; font-size: 20px; line-height: 1.6; color: var(--ivory-dim); margin: 0; }
+.ml-empty .enc-cta { margin-top: 48px; text-align: left; }
+@media (max-width: 1100px) { .ml-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+@media (max-width: 600px) { .ml-grid { grid-template-columns: 1fr; } }
