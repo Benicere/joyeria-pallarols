@@ -99,8 +99,7 @@ const es = {
     contactoH: "Contacto",
     contacto2: "Lunes a sábado",
     contacto3: "Con cita previa",
-    legalL: "© MMXXVI · Diseño de demostración",
-    legalR: "Plata 925 · Buenos Aires, Argentina",
+    copy: "Joyería Pallarols — Plata 925 · Buenos Aires, Argentina",
     devBy: "Desarrollado por",
   },
 };
@@ -204,8 +203,7 @@ const en: typeof es = {
     contactoH: "Contact",
     contacto2: "Monday to Saturday",
     contacto3: "By appointment",
-    legalL: "© MMXXVI · Demo design",
-    legalR: "925 Silver · Buenos Aires, Argentina",
+    copy: "Pallarols Jewellery — 925 Silver · Buenos Aires, Argentina",
     devBy: "Developed by",
   },
 };

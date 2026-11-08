@@ -34,16 +34,20 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="f-legal">
-        <span>{f.legalL}</span>
-        <span>{f.legalR}</span>
-      </div>
-      {/* Firma de la agencia: el logo plateado se dora al acercarse. */}
-      <div className="f-dev">
-        <span>{f.devBy}</span>
-        <a href="https://aurosent.com" target="_blank" rel="noopener noreferrer" aria-label="Aurosent">
-          <AurosentLogo className="h-[15px]" />
-        </a>
+      {/* Barra final, igual que en los otros sitios de Aurosent: © a la izquierda,
+          "Desarrollado por" + logo (plateado que se dora al acercarse) a la derecha. */}
+      <div className="f-bar">
+        <div className="f-bar-inner">
+          <span>
+            © {new Date().getFullYear()} {f.copy}
+          </span>
+          <span className="f-dev">
+            {f.devBy}
+            <a href="https://aurosent.com" target="_blank" rel="noopener noreferrer" aria-label="Aurosent">
+              <AurosentLogo className="h-[16px]" />
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );
