@@ -273,9 +273,10 @@ body::after {
 /* COMPRAR YA · piezas publicadas en Mercado Libre */
 .ml-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .ml-card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); }
-.ml-img { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--bg-2); }
-.ml-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .6s ease, transform 2.5s cubic-bezier(.2,.7,.2,1); }
-.ml-img .ml-img-2 { opacity: 0; }
+/* Como en Mercado Libre: la foto entera sobre blanco, sin recortarla. */
+.ml-img { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; background: #fff; }
+.ml-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .6s ease, transform 2.5s cubic-bezier(.2,.7,.2,1); }
+.ml-img .ml-img-2 { opacity: 0; background: #fff; }
 .ml-card:hover .ml-img .ml-img-2 { opacity: 1; }
 .ml-card:hover .ml-img img { transform: scale(1.03); }
 .ml-body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; flex: 1; }
