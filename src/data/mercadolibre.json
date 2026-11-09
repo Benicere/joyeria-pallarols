@@ -1,5 +1,21 @@
 {
-  "actualizado": null,
-  "tienda": null,
-  "piezas": []
+  "actualizado": "2026-11-09T02:51:21+00:00",
+  "tienda": "https://listado.mercadolibre.com.ar/_CustId_566385051",
+  "piezas": [
+    {
+      "id": "MLA3899004862",
+      "titulo": "Cadenita Con Rosa En Plata 925 Plateado",
+      "precio": 135000,
+      "moneda": "ARS",
+      "stock": 2,
+      "envioGratis": true,
+      "link": "https://articulo.mercadolibre.com.ar/MLA-3899004862-cadenita-con-rosa-en-plata-925-plateado-_JM",
+      "fotos": [
+        "https://http2.mlstatic.com/D_705546-MLA116991726979_082026-O.jpg",
+        "https://http2.mlstatic.com/D_656908-MLA116991962653_082026-O.jpg",
+        "https://http2.mlstatic.com/D_949084-MLA115554875510_082026-O.webp",
+        "https://http2.mlstatic.com/D_806421-MLA116992144649_082026-O.webp"
+      ]
+    }
+  ]
 }
